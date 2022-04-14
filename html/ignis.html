@@ -1,46 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignis Challenge</title>
+
     <link rel="stylesheet" type="text/css" href="../css/ignis.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script src="/js/ignis.js"></script>
 
 </head>
-<body id="pag">
-    
-    <header class="cabecalho" > 
-        <nav class="menu">
-            <ul>
-                <li><a href="ignis.html">Inicio</a></li>
-                <li><a href="#">Times</a>
-                </li>
-                <li><a href="#">Jogos</a>
-                </li>
-                <li><a href="#">Tabela do Torneio</a>
-                </li>
-                <li><a href="#" id="alteraCor" onclick="alterarCor()"><img src="/img/ajuste-de-brilho-e-contraste.png"/></a>
-                </li>
-            </ul>
+
+<body id="body" style="background-color:black; color: white;">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light cor-primaria">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder active" aria-current="page" href="ignis.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder active" href="#jogos">Jogos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder active" href="#torneio">Torneio</a>
+                        </li>
+                    </ul>
+                    <div class="nav-item" id="alteraCor">
+                        <a href="#" onclick="alterarCor()"><img src="/img/ajuste-de-brilho-e-contraste.png" /></a>
+                    </div>
+                </div>
+            </div>
         </nav>
-        <h1>Torneio de Futebol - Ignis Challenge</h1>
     </header>
-    
-    <main class="cont-principal">
 
-        <aside class="add-time">
-            <h2>Cadastro de Times</h2>
-            <textarea rows="10" cols="50" placeholder="Time;Estado" > 
-            </textarea>
+    <main class="container justify-content-center mt-2">
 
-            <button id="btnCadastrar">Cadastrar</button>
-        </aside>
+        <h1 class="text-center my-3">Torneio de Futebol - Ignis Challenge</h1>
+        <section class="row justify-content-center my-2 mb-5" id="inicio">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-8 cor-primaria rounded my-5">
+                <h2 class="text-center my-3">Cadastro de Times</h2>
+                <div class="row mx-auto ">
+                    <textarea rows="10" cols="30" placeholder="Time;Estado" id="txtaCadastro"></textarea>
+                </div>
+                <div class="row justify-content-center my-3">
+                    <button id="btnCadastrar"
+                        class="btn btn-md w-auto rounded border-1 border-warning btn-outline-warning text-white"
+                        onclick="cadastrarTimes()">Cadastrar</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="row justify-content-center" id="jogos">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-8 cor-primaria rounded my-5">
+                <h2 class="text-center my-3">Jogos</h2>
+                <div class="row mx-auto">
+                    <ol class="list-group list-group-numbered" id="lista-jogos">
+                        
+                    </ol>
+                </div>
+                <div class="row justify-content-center my-3">
+                    <button id="btnCadastrar"
+                        class="btn btn-md w-auto rounded border-1 border-warning btn-outline-warning text-white"
+                        onclick="iniciarTorneio()">Começar o Torneio</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="row justify-content-center" id="torneio">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-8 cor-primaria rounded my-5">
+                <h2 class="text-center my-3">Torneio</h2>
+                <div class="row mx-auto">
+                    <table class="text-center  table-responsive text-break">
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Time</th>
+                                <th>Estado</th>
+                                <th>Vitorias</th>
+                                <th>Empates</th>
+                                <th>Derotas</th>
+                                <th>Pontos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbd-jogos">
+                            <tr>
+                                <th>1°</th>
+                                <td>time1</td>
+                                <td>estado</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
     </main>
-    
+
     <footer>
 
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

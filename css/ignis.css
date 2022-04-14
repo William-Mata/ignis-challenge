@@ -1,75 +1,47 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
-#pag {
-    background: black;
-    color: white;
+.cor-primaria{
+    background-color: #143c6c;
+}
+
+.cor-secundaria{
+    background-color: #f4bc14;
 }
 
 
-.menu ul {
-    list-style-type: none;
-    background: #143c6c;
-}
-
-.menu ul li {
-    display: inline;
-    position: relative;
-}
-
-.menu ul li a {
+.menu a {
+    padding: 10px;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    display: inline-block;
-    padding: 20px;
+    display: inline-flex;
     transition: background .5s;
 }
 
-
-.menu ul li a:hover {
-    background: #f4bc14;
+.menu a:hover {
+    border-radius: 5px;
+    background-color: #f4bc14;
 }
 
-
 #alteraCor {
-    margin-right: 10px;
-    padding: 15px;
     float: right;
 }
 
-h1 {
-    margin: 10px;
-    text-align: center;
-}
-
-.cont-principal {
-    display: flex;
-    align-self: center;
-    justify-content: center;
-}
-
-.add-time {
-    width: 75vw;
-    background-color: #143c6c;  
+.time {
+    width: 50vw;
+    background-color: #143c6c;
     border-radius: 5px;
-    display: grid;
-    justify-content: center;
     padding: 10px;
     text-align: center;
 }
 
-.add-time button{
-    display: flex;
-    justify-self: center;
-    text-align: center;
-}
-
-.add-time button{
-    display: flex;
-    justify-self: center;
+header{
+    color: black;
 }
 
 textarea {
@@ -82,4 +54,21 @@ button {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
+}
+
+section {
+    margin-top: 60px;
+    min-height: 95vh;
+}
+
+#inicio {
+    min-height: 50vh;
+}
+
+th, td {
+    padding: 10px;
+    border-radius: 10px;
+    border-spacing: 0px 0px px 9px;
+    background-color: #f4bc14;
+
 }
