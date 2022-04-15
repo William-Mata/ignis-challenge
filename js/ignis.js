@@ -130,7 +130,7 @@ function printarJogos() {
         }
         aux2++;
 
-        document.getElementById("lista-jogos").innerHTML += " <li class='list-group-item d-flex justify-content-between align-items-start text-white bg-warning'> <div class='ms-2 me-auto'> <div class='fw-bold cor-secundaria'>" + jogo.time1.time + " x " + jogo.time2.time + " - " + jogo.time1.estado + " </div> Jogo Ida - Rodada " + aux + (jogo.rodadaDupla1 ? " (Rodada Dupla) " : "") + " </div> <span class='badge cor-primaria rounded-pill'>" + jogo.golsIda1 + " X " + jogo.golsIda2 + "</span></li>";
+        document.getElementById("lista-jogos").innerHTML += " <li class='list-group-item d-flex justify-content-between align-items-start text-white bg-warning'> <div class='ms-2 me-auto'> <div class='fw-bold cor-secundaria'>" + "<img src='/img/"+jogo.time1.time.toLowerCase()+".png' class='w-25'/> " + jogo.time1.time + " x "  + "<img src='/img/"+jogo.time2.time.toLowerCase()+".png'  class='w-25'/> " + jogo.time2.time + " - " + jogo.time1.estado + " </div> Jogo Ida - Rodada " + aux + (jogo.rodadaDupla1 ? " (Rodada Dupla) " : "") + " </div> <span class='badge cor-primaria rounded-pill'>" + jogo.golsIda1 + " X " + jogo.golsIda2 + "</span></li>";
 
     })
 
@@ -141,7 +141,7 @@ function printarJogos() {
         }
         aux2++;
 
-        document.getElementById("lista-jogos").innerHTML += " <li class='list-group-item d-flex justify-content-between align-items-start text-white bg-warning'> <div class='ms-2 me-auto'> <div class='fw-bold cor-secundaria'>" + jogo.time2.time + " x " + jogo.time1.time + " - " + jogo.time2.estado + " </div> Jogo Volta - Rodada " + aux + (jogo.rodadaDupla2 ? " (Rodada Dupla) " : "") + " </div> <span class='badge cor-primaria rounded-pill'>" + jogo.golsVolta1 + " X " + jogo.golsVolta2 + "</span></li>";
+        document.getElementById("lista-jogos").innerHTML += " <li class='list-group-item d-flex justify-content-between align-items-start text-white bg-warning'> <div class='ms-2 me-auto'> <div class='fw-bold cor-secundaria'>"+ "<img src='/img/"+jogo.time2.time.toLowerCase()+".png'  class='w-25'/>" + jogo.time2.time + " x " + "<img src='/img/"+jogo.time1.time.toLowerCase()+".png'  class='w-25'/> " + jogo.time1.time + " - " + jogo.time2.estado + " </div> Jogo Volta - Rodada " + aux + (jogo.rodadaDupla2 ? " (Rodada Dupla) " : "") + " </div> <span class='badge cor-primaria rounded-pill'>" + jogo.golsVolta1 + " X " + jogo.golsVolta2 + "</span></li>";
 
     })
 }
@@ -149,6 +149,7 @@ function printarJogos() {
 function iniciarTorneio() {
     var cont = 0;
     document.getElementById("tbd-jogos").innerHTML = '';
+    document.getElementById("podio").style.display  = "block";
 
     times.map(time => {
         time.vitorias = 0;
@@ -165,6 +166,18 @@ function iniciarTorneio() {
         cont++;
         document.getElementById("tbd-jogos").innerHTML += " <tr> <td>" + cont + "°</td> <td>" + time.time + "</td> <td>" + time.estado + "</td><td> " + time.vitorias + "</td> <td> " + time.empates + "</td> <td>" + time.derotas + "</td> <td>" + time.pontos + "</td> </tr>"
     })
+
+
+    for(j = 0 ; j <= 2; j++){
+        if(j === 0 ){   
+            document.getElementById("time1").src = '/img/'+times[j].time.toLowerCase()+'.png'; 
+            console.log(times[j]);
+        }else if (j ===1){
+            document.getElementById("time2").src = "/img/"+times[j].time.toLowerCase()+".png"; 
+        }else if(j === 2){
+            document.getElementById("time3").src = "/img/"+times[j].time.toLowerCase()+".png"; 
+        }
+    }
 }
 
 function ordernarTimes() {
