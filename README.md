@@ -21,8 +21,7 @@ Santos;São Paulo <br>
 Cruzeiro;Minas Gerais <br>
 Internacional;Rio Grande do Sul <br>
 
-2. Exibir na tela a combinação de jogos para todas as equipes, indicando a cidade do 
-jogo, turno de ida, por exemplo:
+2. Exibir na tela a combinação de jogos para todas as equipes, indicando a cidade do jogo, turno de ida, por exemplo:
 Vasco vs Flamengo - Rio de Janeiro - Rodada 1 <br>
 Palmeiras vs Cruzeiro - São Paulo - Rodada 1 <br>
 Santos vs Internacional - São Paulo - Rodada 1 <br>

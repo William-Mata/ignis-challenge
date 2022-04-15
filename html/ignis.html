@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bolder active" href="#torneio">Torneio</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder active" href="#campeao">Campeão</a>
+                        </li>
                     </ul>
                     <div class="nav-item" id="alteraCor">
                         <a href="#" onclick="alterarCor()"><img src="/img/ajuste-de-brilho-e-contraste.png" /></a>
@@ -67,23 +70,21 @@
             <div class="col-11 col-sm-11 col-md-11 col-lg-8 cor-primaria rounded my-5">
                 <h2 class="text-center my-3">Jogos</h2>
                 <div class="row mx-auto">
-                    <ol class="list-group list-group-numbered" id="lista-jogos">
-                        
+                    <ol class="list-group" id="lista-jogos">
                     </ol>
                 </div>
                 <div class="row justify-content-center my-3">
-                    <button id="btnCadastrar"
-                        class="btn btn-md w-auto rounded border-1 border-warning btn-outline-warning text-white"
+                    <button id="btnIniciar" class="btn btn-md w-auto rounded border-1 border-warning btn-outline-warning text-white"
                         onclick="iniciarTorneio()">Começar o Torneio</button>
                 </div>
             </div>
         </section>
 
         <section class="row justify-content-center" id="torneio">
-            <div class="col-11 col-sm-11 col-md-11 col-lg-8 cor-primaria rounded my-5">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-11 cor-primaria rounded my-5">
                 <h2 class="text-center my-3">Torneio</h2>
                 <div class="row mx-auto">
-                    <table class="text-center  table-responsive text-break">
+                    <table class="table border border-warning text-white table-responsive text-center text-break">
                         <thead>
                             <tr>
                                 <th>Posição</th>
@@ -96,15 +97,7 @@
                             </tr>
                         </thead>
                         <tbody id="tbd-jogos">
-                            <tr>
-                                <th>1°</th>
-                                <td>time1</td>
-                                <td>estado</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

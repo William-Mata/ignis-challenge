@@ -62,13 +62,14 @@ section {
 }
 
 #inicio {
-    min-height: 50vh;
+    min-height: 70vh;
 }
 
-th, td {
-    padding: 10px;
-    border-radius: 10px;
-    border-spacing: 0px 0px px 9px;
-    background-color: #f4bc14;
+table, thead, tbody, th, td {
+    border: #f4bc14;
+}
 
+
+#btnIniciar {
+    display: none;
 }
