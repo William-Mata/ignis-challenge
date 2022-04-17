@@ -73,7 +73,7 @@ table, thead, tbody, th, td {
     display: none;
 }
 
-#lista-jogos img{
-   max-width: 30px;
-   max-height: 30px;
-}
+.logo{
+    max-width: 30px;
+    max-height: 30px;
+ }
